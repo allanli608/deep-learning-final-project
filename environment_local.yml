@@ -1,14 +1,14 @@
 name: deeplearning-local
 channels:
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
   - defaults
 dependencies:
   # --- CONDA PACKAGES ---
   - python=3.10
   - ipykernel
   - ipywidgets  
+  - pandas
+  - scikit-learn
+  - python-Levenshtein
   # --- PIP PACKAGES ---
   - pip
   - pip:

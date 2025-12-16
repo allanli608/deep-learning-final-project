@@ -1,0 +1,30 @@
+name: deeplearning-gpu
+channels:
+  # Prioritize Tsinghua Mirrors for speed in China
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
+  - defaults
+dependencies:
+  # --- CONDA PACKAGES (Core & GPU) ---
+  - python=3.10
+  - ipykernel
+  - ipywidgets
+  - pandas
+  - scikit-learn
+  # PyTorch with CUDA support (adjust 12.1 to 11.8 if your server driver is old)
+  - pytorch
+  - torchvision
+  - torchaudio
+  - pytorch-cuda=12.1
+  
+  # --- PIP PACKAGES ---
+  - pip
+  - pip:
+    # Force pip to use Tsinghua mirror for these packages
+    - --index-url https://pypi.tuna.tsinghua.edu.cn/simple
+    - kagglehub
+    - python-Levenshtein
+    - transformers
+    - accelerate
