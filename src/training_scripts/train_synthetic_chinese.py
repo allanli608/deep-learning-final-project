@@ -1,7 +1,6 @@
 import pandas as pd  # Make sure to import pandas at the top
 import os
 os.environ["HF_ENDPOINT"] = "https://hf-mirror.com"
-os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
 import torch
 from transformers import Seq2SeqTrainingArguments, DataCollatorForSeq2Seq
 from src import MBartNeutralizer, WNCDataset, WeightedSeq2SeqTrainer
@@ -36,7 +35,7 @@ training_args = Seq2SeqTrainingArguments(
     logging_steps=100,
     save_steps=1500,
     save_total_limit=2,
-    evaluation_strategy="steps",
+    eval_strategy="steps",
     eval_steps=1500,
     fp16=True,
     remove_unused_columns=False,
