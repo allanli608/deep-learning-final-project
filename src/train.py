@@ -43,16 +43,15 @@ class WNCDataset(Dataset):
                 truncation=True,
                 return_tensors="pt",
             )
-
-        # Create Weight Mask: 0 for Padding, 1 for Content
-        loss_weights = torch.ones_like(labels["input_ids"], dtype=torch.float)
-        loss_weights[labels["input_ids"] == self.tokenizer.pad_token_id] = 0.0
+        
+        # Get the label IDs
+        labels_ids = labels["input_ids"].squeeze() 
+        labels_ids[labels_ids == self.tokenizer.pad_token_id] = -100
 
         return {
             "input_ids": inputs["input_ids"].squeeze(),
             "attention_mask": inputs["attention_mask"].squeeze(),
-            "labels": labels["input_ids"].squeeze(),
-            "loss_weights": loss_weights.squeeze(),
+            "labels": labels_ids, # Return the masked labels
         }
 
 

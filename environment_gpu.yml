@@ -1,4 +1,4 @@
-name: dl_env
+name: deeplearning-gpu
 channels:
   # Prioritize Tsinghua Mirrors for speed in China
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/
@@ -13,6 +13,7 @@ dependencies:
   - ipywidgets
   - pandas
   - scikit-learn
+  - jupyter
   
   # --- PIP PACKAGES ---
   - pip

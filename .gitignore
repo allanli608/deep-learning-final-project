@@ -4,3 +4,6 @@ __pycache__/
 .DS_STORE
 .vscode/
 results/
+.ipynb_checkpoints
+results/
+models/
