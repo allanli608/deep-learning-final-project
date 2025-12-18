@@ -31,3 +31,4 @@ dependencies:
     - notebook
     - bert_score
     - evaluate
+    - tqdm
