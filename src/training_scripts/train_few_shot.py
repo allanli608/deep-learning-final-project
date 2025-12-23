@@ -1,5 +1,7 @@
-import pandas as pd  # Make sure to import pandas at the top
+import sys
 import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
+import pandas as pd  # Make sure to import pandas at the top
 import math
 
 os.environ["HF_ENDPOINT"] = "https://hf-mirror.com"
@@ -48,7 +50,10 @@ print(
 
 # 3. Initialize mBART
 neutralizer = MBartNeutralizer(
-    model_name="facebook/mbart-large-50", src_lang="zh_CN", tgt_lang="zh_CN"
+    # CHANGE THIS: Point to your English model folder
+    model_name="models/mbart_neutralizer_en_v1", 
+    src_lang="zh_CN", 
+    tgt_lang="zh_CN"
 )
 model = neutralizer.get_model()
 tokenizer = neutralizer.get_tokenizer()
@@ -68,10 +73,10 @@ training_args = Seq2SeqTrainingArguments(
     learning_rate=2e-5,
     # Logging/Saving must be frequent for small data
     logging_steps=10,
-    save_steps=50,
+    save_steps=1000,
     save_total_limit=1,
     eval_strategy="steps",
-    eval_steps=50,
+    eval_steps=1000,
     fp16=True,
     remove_unused_columns=False,
 )

@@ -2,3 +2,4 @@ Model,Style Acc (↑),Content Sim (↑),Fluency PPL (↓),Composite Score
 Baseline (Pivot),72.00%,0.835,36688.70,0.025
 Model 2 (ZeroShot),53.00%,0.950,23755.12,0.028
 Model 3 (Synthetic),62.00%,0.964,25694.13,0.029
+Model 4 (FewShot),53.00%,0.950,23755.12,0.028
