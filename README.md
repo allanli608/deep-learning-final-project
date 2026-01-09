@@ -1,6 +1,6 @@
 # Lost in Translation: Why Zero-Shot Transfer Fails at Detecting Subjectivity in Chinese
 
-**Authors:** Allan Li 
+**Authors:** 李盼嘉乐 (Allan Li) et al.
 **Institution:** Tsinghua University
 
 **Final Report: ** [insert]
