@@ -10,7 +10,7 @@
 ## 📖 Abstract
 Neutral Style Transfer—the automated removal of subjective bias (e.g., changing *"The radical regime"* to *"The government"*)—is a well-solved task in English but remains difficult for low-resource languages like Chinese due to a lack of parallel corpora.
 
-This repository contains the code and datasets for our report, **"Lost in Translation."** We investigate whether large multilingual models (mBART-50) can "transfer" the semantic concept of subjectivity from English to Chinese without target-language supervision.
+This repository contains the code and datasets for our report. We investigate whether large multilingual models (mBART-50) can "transfer" the semantic concept of subjectivity from English to Chinese without target-language supervision.
 
 **Key Findings:**
 1.  **Zero-Shot Transfer Fails:** Without target-language supervision, models default to "copying" input, failing to detect bias (53% Accuracy).
